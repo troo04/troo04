@@ -1,106 +1,91 @@
-<svg xmlns="http://w3.org" viewBox="0 0 800 680" width="100%" height="100%">
+<svg xmlns="http://w3.org" viewBox="0 0 720 540" width="100%" height="100%">
   <defs>
     <style>
       @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-      @keyframes type { from { width: 0; } to { width: 100%; } }
-      @keyframes reveal { from { opacity: 0; height: 0; } to { opacity: 1; height: auto; } }
+      @keyframes reveal { from { opacity: 0; } to { opacity: 1; } }
 
-      .container {
-        font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
-        font-size: 13px;
-        line-height: 1.6;
-        color: #c9d1d9;
-        background: #0d1117;
-        border: 1px solid #30363d;
-        border-radius: 12px;
-        padding: 1.5rem;
-        box-sizing: border-box;
-        width: 100%;
-        height: 100%;
-      }
-
-      .line { display: block; white-space: pre; overflow: hidden; opacity: 0; }
-      .cmd { color: #58a6ff; font-weight: 500; }
-      .dim { color: #8b949e; }
-      .lbl { color: #ff7b72; }
-      .val { color: #a5d6ff; }
-      .head { color: #f0f6fc; font-weight: 600; }
+      .term-bg { fill: #0d1117; stroke: #30363d; stroke-width: 1px; rx: 12px; }
+      .term-text { font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, monospace; font-size: 13px; fill: #c9d1d9; }
       
-      .cursor {
-        display: inline-block;
-        width: 8px;
-        height: 14px;
-        background: #c9d1d9;
-        vertical-align: middle;
-        margin-left: 2px;
-        animation: blink 1s step-end infinite;
-      }
+      .cmd { fill: #58a6ff; font-weight: 500; }
+      .dim { fill: #8b949e; }
+      .lbl { fill: #ff7b72; }
+      .val { fill: #a5d6ff; }
+      .head { fill: #f0f6fc; font-weight: 600; }
+      
+      .cursor { fill: #c9d1d9; animation: blink 1s step-end infinite; }
 
-      /* Animation Timeline for Cascading Type Effects */
-      .l1  { animation: reveal 0.1s forwards 0s; }
-      .l2  { animation: reveal 0.1s forwards 0.5s; width: 12ch; animation: type 0.3s steps(12) forwards 0.5s, reveal 0.1s forwards 0.5s; }
-      .l3  { animation: reveal 0.1s forwards 1.0s; }
-      .l4  { animation: reveal 0.1s forwards 1.2s; }
-      .l5  { animation: reveal 0.1s forwards 1.4s; }
-      .l6  { animation: reveal 0.1s forwards 1.6s; }
-      .l7  { animation: reveal 0.1s forwards 1.8s; }
-      .l8  { animation: reveal 0.1s forwards 2.3s; width: 16ch; animation: type 0.4s steps(16) forwards 2.3s, reveal 0.1s forwards 2.3s; }
-      .l9  { animation: reveal 0.1s forwards 2.9s; }
-      .l10 { animation: reveal 0.1s forwards 3.1s; }
-      .l11 { animation: reveal 0.1s forwards 3.5s; }
-      .l12 { animation: reveal 0.1s forwards 3.7s; }
-      .l13 { animation: reveal 0.1s forwards 3.9s; }
-      .l14 { animation: reveal 0.1s forwards 4.1s; }
-      .l15 { animation: reveal 0.1s forwards 4.3s; }
-      .l16 { animation: reveal 0.1s forwards 4.5s; }
-      .l17 { animation: reveal 0.1s forwards 4.7s; }
-      .l18 { animation: reveal 0.1s forwards 5.2s; width: 19ch; animation: type 0.4s steps(19) forwards 5.2s, reveal 0.1s forwards 5.2s; }
-      .l19 { animation: reveal 0.1s forwards 5.8s; }
-      .l20 { animation: reveal 0.1s forwards 6.2s; }
+      /* Safe Cascading Reveal Timeline */
+      .l1  { animation: reveal 0.1s forwards 0s; opacity: 0; }
+      .l2  { animation: reveal 0.1s forwards 0.5s; opacity: 0; }
+      .l3  { animation: reveal 0.1s forwards 1.0s; opacity: 0; }
+      .l4  { animation: reveal 0.1s forwards 1.2s; opacity: 0; }
+      .l5  { animation: reveal 0.1s forwards 1.4s; opacity: 0; }
+      .l6  { animation: reveal 0.1s forwards 1.6s; opacity: 0; }
+      .l7  { animation: reveal 0.1s forwards 1.8s; opacity: 0; }
+      .l8  { animation: reveal 0.1s forwards 2.3s; opacity: 0; }
+      .l9  { animation: reveal 0.1s forwards 2.6s; opacity: 0; }
+      .l10 { animation: reveal 0.1s forwards 2.8s; opacity: 0; }
+      .l11 { animation: reveal 0.1s forwards 3.2s; opacity: 0; }
+      .l12 { animation: reveal 0.1s forwards 3.4s; opacity: 0; }
+      .l13 { animation: reveal 0.1s forwards 3.6s; opacity: 0; }
+      .l14 { animation: reveal 0.1s forwards 3.8s; opacity: 0; }
+      .l15 { animation: reveal 0.1s forwards 4.0s; opacity: 0; }
+      .l16 { animation: reveal 0.1s forwards 4.2s; opacity: 0; }
+      .l17 { animation: reveal 0.1s forwards 4.6s; opacity: 0; }
+      .l18 { animation: reveal 0.1s forwards 4.9s; opacity: 0; }
+      .l19 { animation: reveal 0.1s forwards 5.2s; opacity: 0; }
     </style>
   </defs>
 
-  <foreignObject width="100%" height="100%">
-    <div xmlns="http://w3.org" class="container">
-      <!-- ASCII Art -->
-      <span class="line l1 dim" style="font-size: 10px; line-height: 1.2;">
-       ___           ___           ___       ___       ___
-      /\__\         /\  \         /\__\     /\__\     /\  \
-      /:/  /        /::\  \       /:/  /    /:/  /    /::\  \
-      /:/__/        /:/\:\  \     /:/  /    /:/  /    /:/\:\  \
-      /::\  \ ___   /::\~\:\  \   /:/  /    /:/  /    /:/  \:\  \
-      /:/\:\  /\__\ /:/\:\ \:\__\ /:/__/    /:/__/    /:/__/ \:\__\
-      \/__\:\/:/  / \:\~\:\ \/__/ \:\  \    \:\  \    \:\  \ /:/  /
-           \::/  /   \:\ \:\__\    \:\  \    \:\  \    \:\  /:/  /
-           /:/  /     \:\ \/__/     \:\  \    \:\  \    \:\/:/  /
-          /:/  /       \:\__\        \:\__\\    \:\__\    \::/  /
-          \/__/         \/__/         \/__/     \/__/     \/__/
-      </span>
+  <!-- Terminal Frame Box Background -->
+  <rect width="100%" height="100%" class="term-bg" />
 
-      <!-- Commands & Output rows -->
-      <span class="line l2"><span class="dim"> ~&gt; </span><span class="cmd">ls links</span><span class="cursor"></span></span>
-      
-      <span class="line l3"><span class="lbl"> Role:          </span><span class="val">Junior CS @ University of Maryland</span></span>
-      <span class="line l4"><span class="lbl"> Spec:          </span><span class="val">Artificial Intelligence and Machine Learning</span></span>
-      <span class="line l5"><span class="lbl"> Minor:         </span><span class="val">Business Analytics</span></span>
-      <span class="line l6"><span class="lbl"> Focus:         </span><span class="val">Full-stack dev · Applied ML · Cloud computing</span></span>
-      <span class="line l7"><span class="lbl"> Now:           </span><span class="val">Generative AI · Mobile dev · Scalable backends</span></span>
-      
-      <span class="line l8"><span class="dim"> ~&gt; </span><span class="cmd">finger user</span><span class="cursor"></span></span>
-      <span class="line l9"> Login: user                            Name: [your name]</span>
-      <span class="line l10"> Directory: /home/user                  Shell: /usr/bin/zsh</span>
-      
-      <span class="line l11 head"> Experience:</span>
-      <span class="line l12 class-lbl">   - Freddie Mac          Data and Development Intern</span>
-      <span class="line l13 class-dim" style="color:#8b949e;">                          AI-driven tools, data automation frameworks</span>
-      <span class="line l14 class-lbl">   - Howard Hughes MI      Web Development Intern</span>
-      <span class="line l15 class-dim" style="color:#8b949e;">                          Modernized large-scale web platforms</span>
-      <span class="line l16 class-lbl">   - Bitcamp               Co-Executive Director (current)</span>
-      <span class="line l17 class-dim" style="color:#8b949e;">                          Lead engineering for 1000+ participant hackathon</span>
-      
-      <span class="line l18"><span class="dim"> ~&gt; </span><span class="cmd">cat ./hobbies</span><span class="cursor"></span></span>
-      <span class="line l19"> Reading · Baking · Bass guitar · Swimming</span>
-      <span class="line l20"><span class="dim"> ~&gt; </span><span class="cursor"></span></span>
-    </div>
-  </foreignObject>
+  <!-- Single SVG Text Block Container -->
+  <text x="25" y="30" class="term-text" xml:space="preserve">
+    <!-- ASCII Container Row -->
+    <tspan x="25" dy="0" class="l1 dim" font-size="11px" letter-spacing="-0.5px">      ___           ___           ___       ___       ___</tspan>
+    <tspan x="25" dy="13" class="l1 dim" font-size="11px" letter-spacing="-0.5px">     /\__\         /\  \         /\__\     /\__\     /\  \</tspan>
+    <tspan x="25" dy="13" class="l1 dim" font-size="11px" letter-spacing="-0.5px">    /:/  /        /::\  \       /:/  /    /:/  /    /::\  \</tspan>
+    <tspan x="25" dy="13" class="l1 dim" font-size="11px" letter-spacing="-0.5px">   /:/__/        /:/\:\  \     /:/  /    /:/  /    /:/\:\  \</tspan>
+    <tspan x="25" dy="13" class="l1 dim" font-size="11px" letter-spacing="-0.5px">  /::\  \ ___   /::\~\:\  \   /:/  /    /:/  /    /:/  \:\  \</tspan>
+    <tspan x="25" dy="13" class="l1 dim" font-size="11px" letter-spacing="-0.5px"> /:/\:\  /\__\ /:/\:\ \:\__\ /:/__/    /:/__/    /:/__/ \:\__\</tspan>
+    <tspan x="25" dy="13" class="l1 dim" font-size="11px" letter-spacing="-0.5px"> \/__\:\/:/  / \:\~\:\ \/__/ \:\  \    \:\  \    \:\  \ /:/  /</tspan>
+    <tspan x="25" dy="13" class="l1 dim" font-size="11px" letter-spacing="-0.5px">      \::/  /   \:\ \:\__\    \:\  \    \:\  \    \:\  /:/  /</tspan>
+    <tspan x="25" dy="13" class="l1 dim" font-size="11px" letter-spacing="-0.5px">      /:/  /     \:\ \/__/     \:\  \    \:\  \    \:\/:/  /</tspan>
+    <tspan x="25" dy="13" class="l1 dim" font-size="11px" letter-spacing="-0.5px">     /:/  /       \:\__\        \:\__\    \:\__\    \::/  /</tspan>
+    <tspan x="25" dy="13" class="l1 dim" font-size="11px" letter-spacing="-0.5px">     \/__/         \/__/         \/__/     \/__/     \/__/ </tspan>
+
+    <!-- First command input block -->
+    <tspan x="25" dy="35" class="l2"><tspan class="dim"> ~&gt; </tspan><tspan class="cmd">ls links</tspan></tspan>
+    
+    <!-- Profile properties lists -->
+    <tspan x="25" dy="22" class="l3"><tspan class="lbl"> Role:          </tspan><tspan class="val">Junior CS @ University of Maryland</tspan></tspan>
+    <tspan x="25" dy="20" class="l4"><tspan class="lbl"> Spec:          </tspan><tspan class="val">Artificial Intelligence and Machine Learning</tspan></tspan>
+    <tspan x="25" dy="20" class="l5"><tspan class="lbl"> Minor:         </tspan><tspan class="val">Business Analytics</tspan></tspan>
+    <tspan x="25" dy="20" class="l6"><tspan class="lbl"> Focus:         </tspan><tspan class="val">Full-stack dev · Applied ML · Cloud computing</tspan></tspan>
+    <tspan x="25" dy="20" class="l7"><tspan class="lbl"> Now:           </tspan><tspan class="val">Generative AI · Mobile dev · Scalable backends</tspan></tspan>
+    
+    <!-- Second command input block -->
+    <tspan x="25" dy="30" class="l8"><tspan class="dim"> ~&gt; </tspan><tspan class="cmd">finger user</tspan></tspan>
+    <tspan x="25" dy="22" class="l9"> Login: user                            Name: [your name]</tspan>
+    <tspan x="25" dy="20" class="l10"> Directory: /home/user                  Shell: /usr/bin/zsh</tspan>
+    
+    <!-- Experience headers & descriptions -->
+    <tspan x="25" dy="30" class="l11 head"> Experience:</tspan>
+    <tspan x="25" dy="22" class="l12 lbl">   - Freddie Mac          Data and Development Intern</tspan>
+    <tspan x="25" dy="20" class="l13 dim">                          AI-driven tools, data automation frameworks</tspan>
+    <tspan x="25" dy="22" class="l14 lbl">   - Howard Hughes MI      Web Development Intern</tspan>
+    <tspan x="25" dy="20" class="l15 dim">                          Modernized large-scale web platforms</tspan>
+    <tspan x="25" dy="22" class="l16 lbl">   - Bitcamp               Co-Executive Director (current)</tspan>
+    <tspan x="25" dy="20" class="l17 dim">                          Lead engineering for 1000+ participant hackathon</tspan>
+    
+    <!-- Final command input block -->
+    <tspan x="25" dy="30" class="l17"><tspan class="dim"> ~&gt; </tspan><tspan class="cmd">cat ./hobbies</tspan></tspan>
+    <tspan x="25" dy="22" class="l18"> Reading · Baking · Bass guitar · Swimming</tspan>
+    <tspan x="25" dy="25" class="l19"><tspan class="dim"> ~&gt; </tspan></tspan>
+  </text>
+
+  <!-- Interactive Static Blinking Cursor Node -->
+  <rect width="8" height="15" x="62" y="500" class="l19 cursor" />
 </svg>
