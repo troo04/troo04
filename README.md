@@ -1,1 +1,1 @@
-<img width="720" height="660" alt="Terminal Icon" src="https://github.com/user-attachments/assets/343cd6b3-84de-40ae-bf32-a38f741d1ee9" />
+<img width="720" height="660" alt="Terminal (2)" src="https://github.com/user-attachments/assets/036f1760-72d9-42f9-9655-4bf1778dae8b" />
