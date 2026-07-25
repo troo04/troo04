@@ -1,3 +1,3 @@
 <div align="center">
-  <img width="724" height="705" alt="Terminal Icon (1)" src="https://github.com/user-attachments/assets/2095704e-7cc2-4649-8d9a-a6f1850551a1" />
+  <img width="730" height="714" alt="terminal" src="https://github.com/user-attachments/assets/f58a548f-36c4-408b-b6d5-68b7ed57cecf" />
 </div>
